@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validity 属性 4</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="">tell</label>
+        <input type="text" id="tell" value="" pattern="^\d{5}">
+        <input type="submit" value="提交tell">
+        <br>
+        <label for="">qq</label>
+        <input type="text" id="qq" value="abcde" pattern="^\d{5}">
+        <input type="submit" value="提交qq">
+    </form>
+
+    <script type="text/javascript">
+        // tell 增加 pattern 字段，正则,value字段为空
+        console.log('tell.validity.patternMismatch :');
+        console.log(tell.validity.patternMismatch);
+        // patternMismatch: false，因为没有设置
+
+        
+        // email 增加 pattern 字段，正则,value字段为空
+        console.log('qq.validity.patternMismatch :');
+        console.log(qq.validity.patternMismatch);
+        // patternMismatch: true    ==> true 表示验证不通过
+    </script>
+</body>
+
+</html>

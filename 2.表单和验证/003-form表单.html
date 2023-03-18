@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formnovalidate 不用验证提交</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="">用户名</label>
+        <input type="text" name="user" placeholder="请输入用户名" required>
+
+        <!-- formnovalidate 不验证直接提交 -->
+        <input type="submit" value="不验证提交" formnovalidate>
+
+        <!-- 输入的工号正则式是：以五位数字开头，最后以 imooc 中的随意某一个字母结尾 -->
+        <input type="text" name="gonghao" placeholder="请输入工号" pattern="^\d{5}[imooc]$">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

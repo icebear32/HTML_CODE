@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkValidity() 方法</title>
+</head>
+
+<body>
+    <form action="">
+        <!-- 会跳出弹框提示不是一个邮箱 -->
+        <input type="email" id="email1" value="sdasda">
+        <input type="submit" value="提交email1">
+        <br>
+        <!-- 会跳出弹框提示是一个邮箱
+        <input type="email" id="email2" value="sdasda@123.com">
+        <input type="submit" value="提交email2"> -->
+
+        <br>
+        <!-- 加入 required 字段 -->
+        <!-- 查看提交的数据符合不符合正则要求 -->
+        <input type="text" id="username1" value="" required>
+        <input type="submit" value="提交username">
+        <br>
+        <input type="text" id="username2" value="" required pattern="^\d{5}">
+        <input type="submit" value="提交username">
+    </form>
+
+    <script>
+        if (email1.checkValidity()) {
+            alert("是一个邮箱")
+        } else {
+            alert("不是一个邮箱")
+        }
+
+        if (email2.checkValidity()) {
+            alert("是一个邮箱")
+        } else {
+            alert("不是一个邮箱")
+        }
+
+        if (username1.checkValidity()) {
+            alert("用户符合")
+        } else {
+            alert("用户不符合")
+        }
+
+        if (username2.checkValidity()) {
+            alert("用户符合")
+        } else {
+            alert("用户不符合")
+        }
+    </script>
+</body>
+
+</html>

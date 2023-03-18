@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validity 属性 5</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="">email</label>
+        <input type="email" id="email" value="absda">
+        <input type="submit" value="提交email">
+        <br>
+        <label for="">url</label>
+        <input type="url" id="url" value="">
+        <input type="submit" value="提交url">
+    </form>
+
+    <script type="text/javascript">
+        console.log('email.validity.typeMismatch:');
+        console.log(email.validity.typeMismatch);
+        // 因为 value 字段的内容不是符合 email 的形式，所以 typeMismatch: true，不符合
+        // email、url、tel等也是一样
+
+        console.log('url.validity.typeMismatch:');
+        console.log(url.validity.typeMismatch); // false，因为value 暂时没填写内容
+    </script>
+</body>
+
+</html>

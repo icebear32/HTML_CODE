@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取消 number 的上下标记</title>
+</head>
+<!-- 取消 number 的上下标记 -->
+<style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+<body>
+    <form action="">
+        <input type="number" id="numbers" max="5" min="3" value="8">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        console.log(numbers.validity);
+    </script>
+</body>
+</html>

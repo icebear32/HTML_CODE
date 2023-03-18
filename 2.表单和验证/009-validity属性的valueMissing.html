@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validity 属性 1</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="">age</label>
+        <input type="text" id="age" required>
+        <input type="submit" value="提交age">
+    </form>
+
+    <script type="text/javascript">
+        console.log('age 的 valueMissing 变为 true');
+        console.log(age.validity.valueMissing);
+        // validity.valueMissing 不论写没写文字都为 false
+        // 当 age 增加 required 字段
+        // valueMissing 变为 true
+    </script>
+</body>
+
+</html>

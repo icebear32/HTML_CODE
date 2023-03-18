@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setCustomValidity() 方法</title>
+</head>
+<style>
+    input[type="text"] {
+        border: 1px solid #ccc;
+        width: 150px;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #eee;
+        border: 1px solid #ddd;
+        width: 60px;
+        height: 33px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <form name="test" action="" method="post">
+        <!-- 加入 oninput 字段 -->
+        <input type="text" required pattern="^\d{4}$" oninput="checkit(this)" placeholder="请输入代码">
+        <input type="submit" value="验证">
+    </form>
+    <script type="text/javascript">
+        // 设置方法将系统自带的提示换成自定义的提示
+        function checkit(obj) {
+            console.log(obj.validity);
+            var it = obj.validity;
+            if (true === it.valueMissing) {
+                obj.setCustomValidity("不能为空！");
+            } else {
+                if (true === it.patternMismatch) {
+                    obj.setCustomValidity("必须是4个数字！");
+                } else {
+                    obj.setCustomValidity("");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

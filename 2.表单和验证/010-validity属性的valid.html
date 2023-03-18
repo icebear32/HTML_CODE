@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validity 属性 2</title>
+</head>
+<style>
+    /* 取消 × 标记，并改变宽高和背景颜色 */
+    input[type="search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        height: 15px;
+        width: 15px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <form action="" method="post">
+        <label for="">sex</label>
+        <input type="text" id="sex" value="abc" required>
+        <input type="submit" value="提交sex">
+    </form>
+
+    <script type="text/javascript">
+        // sex 增加 required 字段和 value字段添加内容
+        console.log('sex.validity.valid :');
+        console.log(sex.validity.valid);
+        console.log('sex.validity.valueMissing :');
+        console.log(sex.validity.valueMissing);
+        // valid 变为 true
+        // valueMissing 变为 false
+    </script>
+</body>
+
+</html>

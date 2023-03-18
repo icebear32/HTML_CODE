@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>required和optional美化表单案例</title>
+</head>
+<style>
+    /* 设置 div 大小 */
+    .container {
+        max-width: 400px;
+        margin: 20px auto;
+    }
+
+    /* 设置样式 */
+    input,
+    select,
+    textarea {
+        width: 240px;
+        margin: 10px 0;
+        border: 1px solid #999;
+        padding: .5em 1em;
+    }
+
+    label {
+        color: #999;
+        margin-left: 10px;
+    }
+
+    input:required,
+    textarea:required {
+        border-right: 3px solid #aa0088;
+    }
+
+    input:optional,
+    select:optional {
+        border-right: 3px solid #999;
+    }
+
+    /* label 名字添加字样 */
+    input:required+label::after {
+        content: "(必填)";
+    }
+
+    input:optional+label::after {
+        content: "(选填)";
+    }
+
+    /* 设置方框边边颜色高亮 */
+    input:focus,
+    select.focus,
+    textarea.focus {
+        outline: 0;
+    }
+
+    input:required:focus,
+    textarea:required:focus {
+        box-shadow: 0 0 3px 1px #aa0088;
+    }
+
+    input:optional:focus,
+    select:optional:focus {
+        box-shadow: 0 0 3px 1px #999;
+    }
+
+    /* 设置按钮样式 */
+    input[type="submit"] {
+        background-color: #cc00aa;
+        border: 2px solid #aa0088;
+        padding: 10px 0;
+    }
+
+    /* 鼠标停放显示的颜色变化 */
+    input[type="submit"]:hover {
+        background-color: #999;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <input type="name" required>
+        <label for="">名称</label>
+        <input type="email" required>
+        <label for="">邮箱</label>
+        <input type="tel">
+        <label for="">手机</label>
+        <input type="url">
+        <label for="">网址</label>
+
+        <select name="#" id="">
+            <option value="1">被必填选项一</option>
+            <option value="2">被必填选项二</option>
+            <option value="3">被必填选项三</option>
+            <option value="4">被必填选项四</option>
+        </select>
+        <textarea name="#" id="" cols="30" rows="10" placeholder="留言（必填）" required></textarea>
+        <input type="submit" value="提交表单">
+    </div>
+</body>
+
+</html>

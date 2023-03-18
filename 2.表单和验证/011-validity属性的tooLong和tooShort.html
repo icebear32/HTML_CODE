@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validity 属性 3</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="">addr</label>
+        <input type="text" id="addr" value="666666" maxlength="5" minlength="2">
+        <input type="submit" value="提交addr">
+    </form>
+
+    <script type="text/javascript">
+        // address 增加 maxlength="5" 字段，最大长度，输入的内容将不能超过五个
+        console.log('addr.validity.tooLong :');
+        console.log(addr.validity.tooLong);
+        console.log('addr.validity.tooShort :');
+        console.log(addr.validity.tooShort);
+        // tooLong: false
+        // tooShort: false
+        // 恒等于 false
+        // 即使 value 设置为 6位数，也是为false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valid和invalid 纯css美化表单案例</title>
+</head>
+<style>
+    .container {
+        margin: 100px;
+        position: relative;
+    }
+
+    /*
+        CSS的 transition 允许CSS的属性值在一定的时间区间内平滑地过渡
+        这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，
+        并圆滑地以动画效果改变CSS的属性值
+     */
+    input {
+        border: 1px solid #999;
+        outline: 0;
+        width: 140px;
+        height: 30px;
+        line-height: 30px;
+        text-indent: 36px;
+        transition: all .3s;
+        border-radius: 4px;
+    }
+
+    span.title {
+        position: absolute;
+        line-height: 30px;
+        height: 30px;
+        left: 2px;
+        top: 2px;
+        transition: all .3s;
+    }
+
+    input:focus,
+    input:hover {
+        text-indent: 2px;
+    }
+
+    /* 右往左滑出 */
+    input:focus+span.title,
+    input:hover+span.title {
+        transform: translateX(-120%);
+    }
+
+    /* 验证输入邮箱信息 */
+    input:valid~label::after {
+        content: "你输入邮箱正确！";
+    }
+
+    input:invalid~label::after {
+        content: "你输入邮箱错误！";
+    }
+
+    input:valid {
+        border: 1px solid green;
+    }
+
+    input:invalid {
+        border: 1px solid red;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <input type="email" id="mail" required placeholder="请输入邮箱">
+        <span class="title">邮箱</span>
+        <label for="mail"></label>
+    </div>
+</body>
+
+</html>
